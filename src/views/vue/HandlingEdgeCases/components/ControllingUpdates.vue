@@ -43,7 +43,6 @@
         }
 
         toRefresh(){
-            console.log(this.arr)
             this.$forceUpdate()
         }
     }

@@ -6,21 +6,6 @@
 
         <div class="right-menu">
 
-
-            <el-dropdown class="avatar-container right-menu-item" trigger="click">
-                <div class="avatar-wrapper">
-                    <img class="user-avatar" :src="avatar+'?imageView2/1/w/80/h/80'">
-                    <i class="el-icon-caret-bottom"></i>
-                </div>
-                <el-dropdown-menu slot="dropdown">
-                    <router-link to="/">
-                        <el-dropdown-item>
-                            home
-                        </el-dropdown-item>
-                    </router-link>
-
-                </el-dropdown-menu>
-            </el-dropdown>
         </div>
     </el-menu>
 </template>

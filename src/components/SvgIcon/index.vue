@@ -14,12 +14,10 @@
 
 
         get iconName() {
-            console.log('b')
             return `#icon-${this.iconClass}`
         }
 
         get svgClass() {
-            console.log('c')
             if (this.className) {
                 return 'svg-icon ' + this.className
             } else {

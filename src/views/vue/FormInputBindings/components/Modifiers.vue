@@ -36,6 +36,7 @@
         input = ''
         number = 1
         msg = ''
+        age = 5
     }
 </script>
 

@@ -48,7 +48,6 @@
                 this.inputType === 'text' ?
                     'password':
                     'text'
-            console.log(1, this.inputType)
         }
     }
 </script>
