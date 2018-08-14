@@ -3,8 +3,12 @@ function resolve (dir) {
     return path.join(__dirname, '..', dir)
 }
 module.exports = {
+    baseUrl: process.env.NODE_ENV === 'production'
+        ? '/vue-case/'
+        : '/',
     chainWebpack: config => {
         // remove the old loader
+        console.log(config)
         config.module.rules.delete('svg')
 
         // add the new one
