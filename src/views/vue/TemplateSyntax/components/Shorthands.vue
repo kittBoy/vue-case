@@ -35,12 +35,13 @@
 </template>
 
 <script lang="ts">
-    import {Vue, Component,} from 'vue-property-decorator'
+    import {Vue, Component} from 'vue-property-decorator'
 
     @Component
     export default class Directives extends Vue {
-        url = "#"
-        onButtonClick(){
+        url = '#'
+
+        onButtonClick() {
             this.$notify({
                 title: 'button被点击',
                 message: 'button被点击'

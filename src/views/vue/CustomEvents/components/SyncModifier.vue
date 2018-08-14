@@ -1,5 +1,3 @@
-
-
 <template>
     <div>
 
@@ -29,12 +27,12 @@
             msg: String
         },
         computed: {
-            msgChild: function(){
+            msgChild () {
                 return this.msg
             }
         },
         methods: {
-            toChangeMsg: function(){
+            toChangeMsg () {
                 this.$emit('update:msg', 'child')
             }
         },
@@ -53,7 +51,8 @@
     })
     export default class SyncModifier extends Vue {
         msg = 'parent'
-        changeMsg(){
+
+        changeMsg() {
             this.msg = 'parent1';
         }
     }

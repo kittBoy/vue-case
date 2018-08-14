@@ -4,7 +4,6 @@
 -->
 
 
-
 <template>
     <div>
 
@@ -35,14 +34,14 @@
         arr = [1, 2, 3, 4]
         msg = 'hi'
 
-        toChange(){
+        toChange() {
             const index = this.$refs.arrIndex.value
             const value = this.$refs.arrValue.value
 
             this.arr[index] = value
         }
 
-        toRefresh(){
+        toRefresh() {
             this.$forceUpdate()
         }
     }

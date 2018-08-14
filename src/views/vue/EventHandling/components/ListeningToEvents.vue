@@ -8,12 +8,12 @@
     <div>
         <div class="case-item">
             <h4>1. 直接将代码写在指令中</h4>
-            <el-button  @click="msg='hi'"  > {{ msg }} </el-button>
+            <el-button @click="msg='hi'"> {{ msg }}</el-button>
         </div>
 
         <div class="case-item">
             <h4>2. 通过方法</h4>
-            <el-button  @click="sayHello"  > {{ msg }} </el-button>
+            <el-button @click="sayHello"> {{ msg }}</el-button>
         </div>
 
     </div>

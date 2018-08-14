@@ -5,7 +5,7 @@
 
 <template>
     <div>
-        <Kanban v-for="item in list" class="kanban todo"  :options="options" :header-text="item.name">
+        <Kanban v-for="item in list" class="kanban todo" :options="options" :header-text="item.name">
             <template slot="left">
                 <CodeEditor :value="item.rawHtml" class="app-codeEditor"/>
             </template>
@@ -40,22 +40,22 @@
             return [
                 {
                     name: 'Prop大小写',
-                    rawHtml: require( "!!html-loader!./components/PropCasing.vue"),
+                    rawHtml: require('!!html-loader!./components/PropCasing.vue'),
                     component: PropCasing
                 },
                 {
                     name: '单向数据流',
-                    rawHtml: require( "!!html-loader!./components/OneWayDataFlow.vue"),
+                    rawHtml: require('!!html-loader!./components/OneWayDataFlow.vue'),
                     component: OneWayDataFlow
                 },
                 {
                     name: 'prop类型验证',
-                    rawHtml: require( "!!html-loader!./components/PropValidation.vue"),
+                    rawHtml: require('!!html-loader!./components/PropValidation.vue'),
                     component: PropValidation
                 },
                 {
                     name: '非 Prop 的特性',
-                    rawHtml: require( "!!html-loader!./components/NonPropAttributes.vue"),
+                    rawHtml: require('!!html-loader!./components/NonPropAttributes.vue'),
                     component: NonPropAttributes
                 }
             ]

@@ -7,19 +7,19 @@
 
 <template>
     <div>
-        <div class="case-item" >
+        <div class="case-item">
             <h4>1. lazy</h4>
             <input v-model.lazy="input" placeholder="edit me">
             <p>Message is: {{ input }}</p>
         </div>
 
-        <div class="case-item" >
+        <div class="case-item">
             <h4>2. number</h4>
             <input v-model.number="age" placeholder="edit me">
             <p>Message is: {{ typeof age}}</p>
         </div>
 
-        <div class="case-item" >
+        <div class="case-item">
             <h4>3. trim</h4>
             <input v-model.trim="msg">
             <p>Message is: {{ msg }}</p>

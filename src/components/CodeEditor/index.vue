@@ -16,19 +16,11 @@
 
     @Component
     export default class CodeEditor extends Vue {
-        jsonEditor: any
+        @Prop() private value: string
 
-        @Prop() value: string
+        private jsonEditor: any
 
-        @Watch('value')
-        onValueChange(value) {
-            const editor_value = this.getValue()
-            if (value !== editor_value) {
-                this.jsonEditor.setValue(this.value)
-            }
-        }
-
-        mounted() {
+        private mounted() {
             this.jsonEditor = CodeMirror.fromTextArea(this.$refs.textarea as HTMLTextAreaElement, {
                 lineNumbers: true,
                 mode: 'text/typescript',
@@ -44,10 +36,17 @@
             })
         }
 
-        getValue() {
-            return this.getValue()
+        @Watch('value')
+        private onValueChange(value) {
+            const EDITOR_VALUE = this.getValue()
+            if (value !== EDITOR_VALUE) {
+                this.jsonEditor.setValue(this.value)
+            }
         }
 
+        private getValue() {
+            return this.getValue()
+        }
     }
 </script>
 

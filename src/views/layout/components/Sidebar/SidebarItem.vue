@@ -1,9 +1,11 @@
 <template>
     <div v-if="!item.hidden&&item.children" class="menu-wrapper">
 
-        <router-link v-if="hasOneShowingChild(item.children) && !onlyOneChild.children&&!item.alwaysShow" :to="resolvePath(onlyOneChild.path)">
+        <router-link v-if="hasOneShowingChild(item.children) && !onlyOneChild.children&&!item.alwaysShow"
+                     :to="resolvePath(onlyOneChild.path)">
             <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
-                <svg-icon v-if="onlyOneChild.meta&&onlyOneChild.meta.icon" :icon-class="onlyOneChild.meta.icon"></svg-icon>
+                <svg-icon v-if="onlyOneChild.meta&&onlyOneChild.meta.icon"
+                          :icon-class="onlyOneChild.meta.icon"></svg-icon>
                 <span v-if="onlyOneChild.meta&&onlyOneChild.meta.title" slot="title">{{generateTitle(onlyOneChild.meta.title)}}</span>
             </el-menu-item>
         </router-link>
@@ -15,12 +17,14 @@
             </template>
 
             <template v-for="child in item.children" v-if="!child.hidden">
-                <sidebar-item :is-nest="true" class="nest-menu" v-if="child.children&&child.children.length>0" :item="child" :key="child.path" :base-path="resolvePath(child.path)"></sidebar-item>
+                <sidebar-item :is-nest="true" class="nest-menu" v-if="child.children&&child.children.length>0"
+                              :item="child" :key="child.path" :base-path="resolvePath(child.path)"></sidebar-item>
 
                 <router-link v-else :to="resolvePath(child.path)" :key="child.name">
                     <el-menu-item :index="resolvePath(child.path)">
                         <svg-icon v-if="child.meta&&child.meta.icon" :icon-class="child.meta.icon"></svg-icon>
-                        <span v-if="child.meta&&child.meta.title" slot="title">{{generateTitle(child.meta.title)}}</span>
+                        <span v-if="child.meta&&child.meta.title"
+                              slot="title">{{generateTitle(child.meta.title)}}</span>
                     </el-menu-item>
                 </router-link>
             </template>
@@ -36,12 +40,12 @@
 
     @Component
     export default class SidebarItem extends Vue {
-        @Prop() item!: Object
-        @Prop({ default: false}) isNest: boolean
-        @Prop({ default: ''}) basePath: string
+        @Prop() item!: object
+        @Prop({default: false}) isNest: boolean
+        @Prop({default: ''}) basePath: string
 
 
-        onlyOneChild=null
+        onlyOneChild = null
 
 
         hasOneShowingChild(children: any) {
@@ -64,7 +68,7 @@
             return path.resolve(this.basePath, ...paths)
         }
 
-        generateTitle(title: string) : any{
+        generateTitle(title: string): any {
 
             return title
         }

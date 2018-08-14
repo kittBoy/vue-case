@@ -26,14 +26,15 @@
 
 
     @Component({
-        components:{
+        components: {
             'child-component': $Vue.component('child-component')
         }
     })
 
     export default class ElementComponentAccess extends Vue {
         @Provide() provideData = 'from ElementComponentAccess'
-        inputFocus(){
+
+        inputFocus() {
             this.$refs.usernameInput.focus()
         }
     }

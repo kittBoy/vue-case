@@ -14,8 +14,9 @@
 <script lang="ts">
     import {Vue, Component} from 'vue-property-decorator'
     import $Vue from 'vue/dist/vue.js'
-    var getChildrenTextContent = function (children) {
-        return children.map(function (node) {
+
+    const getChildrenTextContent = (children) => {
+        return children.map(node => {
             return node.children
                 ? getChildrenTextContent(node.children)
                 : node.text
@@ -23,9 +24,9 @@
     }
 
     $Vue.component('anchored-heading', {
-        render: function (createElement) {
+        render (createElement) {
             // create kebab-case id
-            var headingId = getChildrenTextContent(this.$slots.default)
+            const headingId = getChildrenTextContent(this.$slots.default)
                 .toLowerCase()
                 .replace(/\W+/g, '-')
                 .replace(/(^\-|\-$)/g, '')

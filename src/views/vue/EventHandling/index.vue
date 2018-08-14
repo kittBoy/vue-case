@@ -5,7 +5,7 @@
 
 <template>
     <div>
-        <Kanban v-for="item in list"  class="kanban todo"  :header-text="item.name">
+        <Kanban v-for="item in list" class="kanban todo" :header-text="item.name">
             <template slot="left">
                 <CodeEditor :value="item.rawHtml" class="app-codeEditor"/>
             </template>
@@ -38,11 +38,11 @@
             return [
                 {
                     name: '事件监听',
-                    rawHtml: require( "!!html-loader!./components/ListeningToEvents.vue"),
+                    rawHtml: require('!!html-loader!./components/ListeningToEvents.vue'),
                     component: ListeningToEvents
-                },{
+                }, {
                     name: '事件修饰符',
-                    rawHtml: require( "!!html-loader!./components/EventModifiers.vue"),
+                    rawHtml: require('!!html-loader!./components/EventModifiers.vue'),
                     component: EventModifiers
                 }
             ]

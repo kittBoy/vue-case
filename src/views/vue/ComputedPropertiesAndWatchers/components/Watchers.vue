@@ -16,7 +16,7 @@ watch 提供了一个更通用的方法，来响应数据的变化。当需要�
             <h4>1. watch</h4>
             <p>
                 Ask a yes/no question:
-                <el-input v-model="question" placeholder="请输入内容" ></el-input>
+                <el-input v-model="question" placeholder="请输入内容"></el-input>
             </p>
             <p>{{ answer }}</p>
 
@@ -26,7 +26,7 @@ watch 提供了一个更通用的方法，来响应数据的变化。当需要�
             <h4>2. 用computed setter 实现 watch</h4>
             <p>
                 Ask a yes/no question:
-                <el-input v-model="CQuestion" placeholder="请输入内容" ></el-input>
+                <el-input v-model="CQuestion" placeholder="请输入内容"></el-input>
             </p>
             <p>{{ answer }}</p>
 
@@ -37,16 +37,17 @@ watch 提供了一个更通用的方法，来响应数据的变化。当需要�
 </template>
 
 <script lang="ts">
-    import {Vue, Component,Watch} from 'vue-property-decorator'
-    const _  = require('lodash')
+    import {Vue, Component, Watch} from 'vue-property-decorator'
+
+    const _ = require('lodash')
 
     @Component
     export default class Watchers extends Vue {
 
         question: any = ''
         cquestion: any = ''
-        answer= 'I cannot give you an answer until you ask a question!'
-        debouncedGetAnswer: Function
+        answer = 'I cannot give you an answer until you ask a question!'
+        debouncedGetAnswer: () => void
         currentMode = 'question'
 
         @Watch('question')
@@ -59,14 +60,15 @@ watch 提供了一个更通用的方法，来响应数据的变化。当需要�
         get CQuestion() {
             return this.cquestion
         }
-        set CQuestion (val) {
+
+        set CQuestion(val) {
             this.cquestion = val
             this.currentMode = 'CQuestion'
             this.answer = 'Waiting for you to stop typing...'
             this.debouncedGetAnswer()
         }
 
-        created () {
+        created() {
             // `_.debounce` 是一个通过 Lodash 限制操作频率的函数。
             // 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率
             // AJAX 请求直到用户输入完毕才会发出。想要了解更多关于
@@ -81,10 +83,8 @@ watch 提供了一个更通用的方法，来响应数据的变化。当需要�
                 return
             }
             this.answer = 'Thinking...'
-            var vm = this
-
-            setTimeout(()=>{
-                vm.answer = 'hello client '
+            setTimeout(() => {
+                this.answer = 'hello client '
             }, 1000)
 
         }

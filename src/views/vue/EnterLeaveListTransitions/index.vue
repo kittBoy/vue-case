@@ -5,7 +5,7 @@
 
 <template>
     <div>
-        <Kanban v-for="item in list" class="kanban todo"   :header-text="item.name">
+        <Kanban v-for="item in list" class="kanban todo" :header-text="item.name">
             <template slot="left">
                 <CodeEditor :value="item.rawHtml" class="app-codeEditor"/>
             </template>
@@ -38,27 +38,27 @@
             return [
                 {
                     name: '单元素/组件的过渡',
-                    rawHtml: require( "!!html-loader!./components/TransitioningSingleElementsComponents.vue"),
+                    rawHtml: require('!!html-loader!./components/TransitioningSingleElementsComponents.vue'),
                     component: TransitioningSingleElementsComponents
                 },
                 {
                     name: 'CSS 动画',
-                    rawHtml: require( "!!html-loader!./components/CSSAnimations.vue"),
+                    rawHtml: require('!!html-loader!./components/CSSAnimations.vue'),
                     component: CSSAnimations
                 },
                 {
                     name: '自定义过渡的类名',
-                    rawHtml: require( "!!html-loader!./components/CustomTransitionClasses.vue"),
+                    rawHtml: require('!!html-loader!./components/CustomTransitionClasses.vue'),
                     component: CustomTransitionClasses
                 },
                 {
                     name: 'JavaScript 钩子',
-                    rawHtml: require( "!!html-loader!./components/JavaScriptHooks.vue"),
+                    rawHtml: require('!!html-loader!./components/JavaScriptHooks.vue'),
                     component: JavaScriptHooks
                 },
                 {
                     name: '列表的排序过渡',
-                    rawHtml: require( "!!html-loader!./components/ListMoveTransitions.vue"),
+                    rawHtml: require('!!html-loader!./components/ListMoveTransitions.vue'),
                     component: ListMoveTransitions
                 }
             ]

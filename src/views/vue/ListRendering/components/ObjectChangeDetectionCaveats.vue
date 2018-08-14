@@ -16,7 +16,8 @@ vm.$set(vm.userProfile, 'age', 27)
         <div class="case-item">
             <h4>1. 修改对象属性</h4>
             <div>
-                <el-button v-for="(value, key) in obj" @click="toChangeValue(key)">{{ value }} - {{ key }}-点击修改</el-button>
+                <el-button v-for="(value, key) in obj" @click="toChangeValue(key)">{{ value }} - {{ key }}-点击修改
+                </el-button>
             </div>
         </div>
     </div>
@@ -27,10 +28,10 @@ vm.$set(vm.userProfile, 'age', 27)
 
     @Component
     export default class ObjectChangeDetectionCaveats extends Vue {
-        obj = {a: 1, b:2, c: 3, d: 4}
+        obj = {a: 1, b: 2, c: 3, d: 4}
 
         toChangeValue(key) {
-            this.$set(this.obj, key, Math.random().toString(32).slice(2,3))
+            this.$set(this.obj, key, Math.random().toString(32).slice(2, 3))
         }
     }
 </script>

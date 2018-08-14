@@ -5,7 +5,7 @@
 
 <template>
     <div>
-        <Kanban v-for="item in list"  class="kanban todo"  :options="options" :header-text="item.name">
+        <Kanban v-for="item in list" class="kanban todo" :options="options" :header-text="item.name">
             <template slot="left">
                 <CodeEditor :value="item.rawHtml" class="app-codeEditor"/>
             </template>
@@ -38,11 +38,11 @@
             return [
                 {
                     name: '计算属性',
-                    rawHtml: require( "!!html-loader!./components/ComputedProperties.vue"),
+                    rawHtml: require('!!html-loader!./components/ComputedProperties.vue'),
                     component: ComputedProperties
-                },{
+                }, {
                     name: '侦听器',
-                    rawHtml: require( "!!html-loader!./components/Watchers.vue"),
+                    rawHtml: require('!!html-loader!./components/Watchers.vue'),
                     component: Watchers
                 }
             ]

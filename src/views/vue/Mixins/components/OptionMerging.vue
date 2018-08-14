@@ -13,7 +13,7 @@
 
         <div class="case-item">
             <h4>1. 选项合并</h4>
-            <el-button  @click="hello">mixins</el-button>
+            <el-button @click="hello">mixins</el-button>
         </div>
 
         <div class="case-item">
@@ -28,18 +28,18 @@
     import {Vue, Component} from 'vue-property-decorator'
 
     const myMixin = {
-        data: function () {
+        data () {
             return {
                 message: 'hello',
                 foo: 'mixins'
             }
         },
-        created: function(){
+        created () {
             this.hello()
             this.notify('Mixins', '先执行')
         },
         methods: {
-            notify: function(title, message){
+            notify (title, message) {
                 setTimeout(() => {
                     this.$notify({
                         title,
@@ -47,21 +47,21 @@
                     })
                 })
             },
-            hello: function(){
+            hello () {
                 this.notify(this.foo, this.message)
             }
         }
     }
 
     @Component({
-        mixins:[myMixin]
+        mixins: [myMixin]
     })
     export default class OptionMerging extends Vue {
         message = 'hello'
         foo = 'self'
 
-        created(){
-            this.notify('self','后执行')
+        created() {
+            this.notify('self', '后执行')
         }
     }
 </script>

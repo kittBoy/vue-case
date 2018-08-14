@@ -5,7 +5,7 @@
 
 <template>
     <div>
-        <Kanban v-for="item in list"  class="kanban todo"  :options="options" :header-text="item.name">
+        <Kanban v-for="item in list" class="kanban todo" :options="options" :header-text="item.name">
             <template slot="left">
                 <CodeEditor :value="item.rawHtml" class="app-codeEditor"/>
             </template>
@@ -23,6 +23,7 @@
     import Interpolations from './components/Interpolations.vue'
     import Directives from './components/Directives.vue'
     import Shorthands from './components/Shorthands.vue'
+
     @Component({
         components: {
             Kanban,
@@ -38,15 +39,15 @@
             return [
                 {
                     name: '插值',
-                    rawHtml: require( "!!html-loader!./components/Interpolations.vue"),
+                    rawHtml: require('!!html-loader!./components/Interpolations.vue'),
                     component: Interpolations
-                },{
+                }, {
                     name: '指令',
-                    rawHtml: require( "!!html-loader!./components/Directives.vue"),
+                    rawHtml: require('!!html-loader!./components/Directives.vue'),
                     component: Directives
-                },{
+                }, {
                     name: '缩写',
-                    rawHtml: require( "!!html-loader!./components/Shorthands.vue"),
+                    rawHtml: require('!!html-loader!./components/Shorthands.vue'),
                     component: Shorthands
                 }
             ]

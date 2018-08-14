@@ -25,7 +25,6 @@
         </div>
 
 
-
         <div class="case-item">
             <h4>3. 元素属性赋值</h4>
             <div v-bind:id="dynamicId">请使用F12查看我的Id</div>
@@ -40,14 +39,14 @@
 </template>
 
 <script lang="ts">
-    import {Vue, Component,} from 'vue-property-decorator'
+    import {Vue, Component} from 'vue-property-decorator'
 
     @Component
     export default class Interpolations extends Vue {
-        role = "admin"
-        rawHtml = "<div>hello world</div>"
-        dynamicId = "id"
+        role = 'admin'
+        rawHtml = '<div>hello world</div>'
+        dynamicId = 'id'
         number = 1
-        ok =false
+        ok = false
     }
 </script>

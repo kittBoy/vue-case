@@ -52,7 +52,7 @@
     export default class ArrayChangeDetection extends Vue {
         msg = 'hello'
 
-        onButtonClick(){
+        onButtonClick() {
             setTimeout(() => {
                 this.$notify({
                     title: 'button被点击',
@@ -61,17 +61,16 @@
             })
         }
 
-        onSubmit(){
+        onSubmit() {
             this.$notify({
                 title: 'submit被点击',
                 message: 'submit被点击'
             });
         }
 
-        onDivClick(){
-            const self = this;
-            setTimeout(function(){
-                self.$notify({
+        onDivClick() {
+            setTimeout(() => {
+                this.$notify({
                     title: 'Div被点击',
                     message: 'Div被点击'
                 });

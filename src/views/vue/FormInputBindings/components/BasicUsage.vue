@@ -9,13 +9,13 @@
 
 <template>
     <div>
-        <div class="case-item" >
+        <div class="case-item">
             <h4>1. 文本</h4>
             <input v-model="input" placeholder="edit me">
             <p>Message is: {{ input }}</p>
         </div>
 
-        <div class="case-item" >
+        <div class="case-item">
             <h4>2. 多行文本</h4>
             <span>Multiline message is:</span>
             <p style="white-space: pre-line;">{{ textarea }}</p>
@@ -23,7 +23,7 @@
             <textarea v-model="textarea" placeholder="add multiple lines"></textarea>
         </div>
 
-        <div class="case-item" >
+        <div class="case-item">
             <h4>3. 复选框</h4>
             <div>
                 <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="case-item" >
+        <div class="case-item">
             <h4>4. 单选按钮</h4>
             <div>
                 <input type="radio" id="one" value="One" v-model="picked">
@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <div class="case-item" >
+        <div class="case-item">
             <h4>5. 选择框</h4>
             <select v-model="selected">
                 <option disabled value="">请选择</option>

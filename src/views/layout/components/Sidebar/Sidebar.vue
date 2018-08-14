@@ -30,6 +30,7 @@
     export default class Sidebar extends Vue {
         @Getter('sidebar') sidebar: any
         @Getter('permission_routers') permission_routers: any
+
         get isCollapse() {
             return !this.sidebar.opened
         }

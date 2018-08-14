@@ -5,7 +5,7 @@
 
 <template>
     <div>
-        <Kanban v-for="item in list"  class="kanban todo"  :options="options" :header-text="item.name">
+        <Kanban v-for="item in list" class="kanban todo" :options="options" :header-text="item.name">
             <template slot="left">
                 <CodeEditor :value="item.rawHtml" class="app-codeEditor"/>
             </template>
@@ -24,6 +24,7 @@
     import ArrayChangeDetection from './components/ArrayChangeDetection.vue'
     import ObjectChangeDetectionCaveats from './components/ObjectChangeDetectionCaveats.vue'
     import VForWithARange from './components/VForWithARange.vue'
+
     @Component({
         components: {
             Kanban,
@@ -39,19 +40,19 @@
             return [
                 {
                     name: '用 v-for 把一个数组对应为一组元素',
-                    rawHtml: require( "!!html-loader!./components/MappingArray2ElementsWithVfor.vue"),
+                    rawHtml: require('!!html-loader!./components/MappingArray2ElementsWithVfor.vue'),
                     component: MappingArray2ElementsWithVfor
-                },{
+                }, {
                     name: '数组更新检测',
-                    rawHtml: require( "!!html-loader!./components/ArrayChangeDetection.vue"),
+                    rawHtml: require('!!html-loader!./components/ArrayChangeDetection.vue'),
                     component: ArrayChangeDetection
-                },{
+                }, {
                     name: '对象更改检测注意事项',
-                    rawHtml: require( "!!html-loader!./components/ObjectChangeDetectionCaveats.vue"),
+                    rawHtml: require('!!html-loader!./components/ObjectChangeDetectionCaveats.vue'),
                     component: ObjectChangeDetectionCaveats
-                },{
+                }, {
                     name: 'v-for相关内容',
-                    rawHtml: require( "!!html-loader!./components/VForWithARange.vue"),
+                    rawHtml: require('!!html-loader!./components/VForWithARange.vue'),
                     component: VForWithARange
                 }
             ]

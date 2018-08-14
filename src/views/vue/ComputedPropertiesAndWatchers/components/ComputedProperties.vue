@@ -18,16 +18,22 @@
 
         <div class="case-item">
             <h4>2. 计算属性的getter, setter</h4>
-            <div>firstName： <el-input v-model="firstName" placeholder="请输入内容" ></el-input></div>
-            <div>lastName： <el-input v-model="lastName" placeholder="请输入内容" ></el-input></div>
-            <div>fullName： <el-input v-model="fullName" placeholder="请输入内容" ></el-input></div>
+            <div>firstName：
+                <el-input v-model="firstName" placeholder="请输入内容"></el-input>
+            </div>
+            <div>lastName：
+                <el-input v-model="lastName" placeholder="请输入内容"></el-input>
+            </div>
+            <div>fullName：
+                <el-input v-model="fullName" placeholder="请输入内容"></el-input>
+            </div>
         </div>
 
     </div>
 </template>
 
 <script lang="ts">
-    import {Vue, Component,} from 'vue-property-decorator'
+    import {Vue, Component} from 'vue-property-decorator'
 
     @Component
     export default class ComputedProperties extends Vue {
@@ -35,11 +41,11 @@
         firstName = 'foo'
         lastName = 'bar'
 
-        get fullName () {
+        get fullName() {
             return this.firstName + ' ' + this.lastName
         }
 
-        set fullName (val) {
+        set fullName(val) {
             const name = val.split(' ')
             this.firstName = name[0]
             this.lastName = name[1]

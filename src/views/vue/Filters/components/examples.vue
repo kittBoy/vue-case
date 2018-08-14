@@ -4,7 +4,7 @@
         <div class="case-item">
             <h4>1. 基础</h4>
             <textarea v-model="msg"></textarea>
-            <div> {{ msg | capitalize }} </div>
+            <div> {{ msg | capitalize }}</div>
         </div>
 
     </div>
@@ -16,14 +16,16 @@
 
     @Component({
         filters: {
-            capitalize: function (value) {
-                if (!value) return ''
+            capitalize (value) {
+                if (!value) {
+                    return ''
+                }
                 value = value.toString()
                 return value.charAt(0).toUpperCase() + value.slice(1)
             }
         }
     })
-    export default class examples extends Vue {
+    export default class Examples extends Vue {
         msg = 'hi filter'
     }
 </script>

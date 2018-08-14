@@ -3,7 +3,7 @@
 
         <div class="case-item">
             <h4>1. 基础</h4>
-            <el-button  @click="hello">mixins</el-button>
+            <el-button @click="hello">mixins</el-button>
         </div>
 
     </div>
@@ -13,10 +13,10 @@
     import {Vue, Component} from 'vue-property-decorator'
 
     const myPlugins = {
-        install: function(Vue){
+        install (Vue) {
             Vue.mixin({
                 methods: {
-                    hello: function(){
+                    hello () {
                         this.$notify({
                             title: 'Plugins',
                             message: 'hi'
@@ -30,7 +30,7 @@
     Vue.use(myPlugins)
 
     @Component
-    export default class examples extends Vue {
+    export default class Examples extends Vue {
     }
 </script>
 

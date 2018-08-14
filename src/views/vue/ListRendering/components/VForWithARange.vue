@@ -50,14 +50,15 @@ v-for 的优先级比 v-if 更高
             {
                 event: '吃饭',
                 isComplete: true
-            },{
+            }, {
                 event: '喝水',
                 isComplete: false
-            },{
+            }, {
                 event: '睡觉',
                 isComplete: true
             }
         ]
+
         toChangeValue(index) {
             this.$set(this.numbers, index, Math.random().toString().slice(2, 3))
         }

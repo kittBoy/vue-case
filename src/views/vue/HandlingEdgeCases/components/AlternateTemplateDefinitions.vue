@@ -3,7 +3,6 @@
 -->
 
 
-
 <template>
     <div>
 
@@ -28,7 +27,7 @@
 
     $Vue.component('child-component', {
         inject: ['provideData'],
-        data: function(){
+        data () {
             return {
                 childData: this.provideData
             }
@@ -37,7 +36,7 @@
 
 
     @Component({
-        components:{
+        components: {
             'child-component': $Vue.component('child-component')
         }
     })

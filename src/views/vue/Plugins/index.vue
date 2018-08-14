@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Kanban v-for="item in list"  class="kanban todo"  :options="options" :header-text="item.name">
+        <Kanban v-for="item in list" class="kanban todo" :options="options" :header-text="item.name">
             <template slot="left">
                 <CodeEditor :value="item.rawHtml" class="app-codeEditor"/>
             </template>
@@ -32,7 +32,7 @@
             return [
                 {
                     name: '插件示列',
-                    rawHtml: require( "!!html-loader!./components/examples.vue"),
+                    rawHtml: require('!!html-loader!./components/examples.vue'),
                     component: examples
                 }
             ]

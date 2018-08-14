@@ -7,7 +7,7 @@
 
         <div class="case-item">
             <h4>1. 全局混入</h4>
-            <el-button  @click="sayHi">全局混入</el-button>
+            <el-button @click="sayHi">全局混入</el-button>
         </div>
 
     </div>
@@ -18,7 +18,7 @@
 
     Vue.mixin({
         methods: {
-            sayHi: function () {
+            sayHi () {
                 this.$notify({
                     title: 'from global',
                     message: this.msg

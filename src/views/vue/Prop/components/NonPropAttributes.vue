@@ -43,10 +43,10 @@
     export default class NonPropAttributes extends Vue {
         inputType = 'text'
 
-        inputTypeChange(){
+        inputTypeChange() {
             this.inputType =
                 this.inputType === 'text' ?
-                    'password':
+                    'password' :
                     'text'
         }
     }

@@ -27,8 +27,8 @@
 
     @Component
     export default class MappingArray2ElementsWithVfor extends Vue {
-        arr = [1,2,3,4,5]
-        obj = {a: 1, b:2, c: 3, d: 4}
+        arr = [1, 2, 3, 4, 5]
+        obj = {a: 1, b: 2, c: 3, d: 4}
     }
 </script>
 

@@ -30,7 +30,7 @@
 
     $Vue.component('change-copy-props', {
         props: ['count'],
-        data : function(){
+        data () {
             return {
                 selfCount: this.count
             }
@@ -46,7 +46,7 @@
         }
     })
     export default class OneWayDataFlow extends Vue {
-       count = 1
+        count = 1
     }
 </script>
 

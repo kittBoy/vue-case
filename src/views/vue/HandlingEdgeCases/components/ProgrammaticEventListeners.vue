@@ -22,7 +22,7 @@
 
     $Vue.component('child-component', {
         methods: {
-            update: function() {
+            update () {
                 this.$emit('update')
             }
         },
@@ -31,7 +31,7 @@
 
 
     @Component({
-        components:{
+        components: {
             'child-component': $Vue.component('child-component')
         }
     })
@@ -39,17 +39,16 @@
     export default class ProgrammaticEventListeners extends Vue {
         @Provide() provideData = 'from ElementComponentAccess'
 
-        mounted(){
-            let self = this
+        mounted() {
             this.$on('update', function () {
                 this.$notify({
                     title: 'child update',
                     message: '无限次监听'
                 });
             })
-            this.$once('update', function () {
-                setTimeout(function(){
-                    self.$notify({
+            this.$once('update', ()=> {
+                setTimeout(() => {
+                    this.$notify({
                         title: 'child update',
                         message: '只监听一次'
                     });
@@ -57,7 +56,7 @@
             })
         }
 
-        cancelWatch(){
+        cancelWatch() {
             this.$off('update')
             this.$notify({
                 title: 'child update',

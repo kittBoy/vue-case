@@ -51,13 +51,13 @@ Symbol
             propE: {
                 type: Object,
                 // 对象或数组且一定会从一个工厂函数返回默认值
-                default: function () {
+                default () {
                     return {message: 'hello'}
                 }
             },
             // 自定义验证函数
             propF: {
-                validator: function (value) {
+                validator (value) {
                     // 这个值必须匹配下列字符串中的一个
                     return ['success', 'warning', 'danger'].indexOf(value) !== -1
                 }

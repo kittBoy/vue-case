@@ -20,22 +20,22 @@
 </template>
 
 <script lang="ts">
-    import {Vue, Component,} from 'vue-property-decorator'
+    import {Vue, Component} from 'vue-property-decorator'
 
     @Component
     export default class Directives extends Vue {
-        url = "#"
-        onButtonClick(){
+        url = '#'
+
+        onButtonClick() {
             this.$notify({
                 title: 'button被点击',
                 message: 'button被点击'
             });
         }
 
-        onDivClick(){
-            const self = this;
-            setTimeout(function(){
-                self.$notify({
+        onDivClick() {
+            setTimeout(() => {
+                this.$notify({
                     title: 'Div被点击',
                     message: 'Div被点击'
                 });

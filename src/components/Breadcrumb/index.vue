@@ -14,20 +14,19 @@
 
     @Component
     export default class Breadcrumb extends Vue {
-        created() {
+        private levelList = null
+
+        private created() {
             this.getBreadcrumb()
         }
-
-        levelList = null
 
         @Watch('$route')
-        onRouteChange() {
+        private onRouteChange() {
             this.getBreadcrumb()
         }
 
-
-        getBreadcrumb() {
-            let matched = this.$route.matched.filter(item => item.name)
+        private getBreadcrumb() {
+            const matched = this.$route.matched.filter(item => item.name)
             this.levelList = matched
         }
 

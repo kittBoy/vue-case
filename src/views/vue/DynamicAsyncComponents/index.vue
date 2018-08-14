@@ -5,7 +5,7 @@
 
 <template>
     <div>
-        <Kanban v-for="item in list" :key="1" class="kanban todo"  :options="options" :header-text="item.name">
+        <Kanban v-for="item in list" class="kanban todo" :header-text="item.name">
             <template slot="left">
                 <CodeEditor :value="item.rawHtml" class="app-codeEditor"/>
             </template>
@@ -37,7 +37,7 @@
             return [
                 {
                     name: '在动态组件上使用 keep-alive',
-                    rawHtml: require( "!!html-loader!./components/KeepAlive.vue"),
+                    rawHtml: require('!!html-loader!./components/KeepAlive.vue'),
                     component: KeepAlive
                 }
             ]

@@ -5,7 +5,7 @@
 
 <template>
     <div>
-        <Kanban v-for="item in list" class="kanban todo"   :header-text="item.name">
+        <Kanban v-for="item in list" class="kanban todo" :header-text="item.name">
             <template slot="left">
                 <CodeEditor :value="item.rawHtml" class="app-codeEditor"/>
             </template>
@@ -35,7 +35,7 @@
             return [
                 {
                     name: '状态动画与侦听器',
-                    rawHtml: require( "!!html-loader!./components/AnimatingStateWithWatchers.vue"),
+                    rawHtml: require('!!html-loader!./components/AnimatingStateWithWatchers.vue'),
                     component: AnimatingStateWithWatchers
                 }
             ]

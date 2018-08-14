@@ -30,19 +30,20 @@ vm.items.splice(indexOfItem, 1, newValue)
     <div>
         <div class="case-item">
             <h4>1. v-for 数组</h4>
-            <el-button  v-for="(item, index) in arr"  ><span>{{ item.name }}</span></el-button>
+            <el-button v-for="(item, index) in arr"><span>{{ item.name }}</span></el-button>
             <el-button type="primary" @click="toReverse">reverse</el-button>
         </div>
 
         <div class="case-item">
             <h4>2. 替换数组</h4>
-            <el-button  v-for="(item, index) in arr"  ><span>{{ item.name }}</span></el-button>
+            <el-button v-for="(item, index) in arr"><span>{{ item.name }}</span></el-button>
             <el-button type="primary" @click="toReplace">替换数组</el-button>
         </div>
 
         <div class="case-item">
             <h4>3. 改变数组元素的值</h4>
-            <el-button  v-for="(item, index) in arr"  @click="toChangeValue(index)"><span>{{ item.name }}-修改值</span></el-button>
+            <el-button v-for="(item, index) in arr" @click="toChangeValue(index)"><span>{{ item.name }}-修改值</span>
+            </el-button>
         </div>
     </div>
 </template>
@@ -55,9 +56,7 @@ vm.items.splice(indexOfItem, 1, newValue)
         arr = [{name: 1}, {name: 2}, {name: 3}, {name: 4}]
 
         toReplace() {
-            this.arr = this.arr.filter(function (item, index) {
-                return index > 0
-            })
+            this.arr = this.arr.filter((item, index) => index > 0)
         }
 
         toReverse() {

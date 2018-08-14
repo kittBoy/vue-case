@@ -34,15 +34,11 @@
         numbers = [1, 2, 3, 4, 5]
 
         even(numbers) {
-            return numbers.filter(function (number) {
-                return number % 2 === 0
-            })
+            return numbers.filter((number: number) => number % 2 === 0)
         }
 
         get evenNumbers() {
-            return this.numbers.filter(function (number) {
-                return number % 2 === 0
-            })
+            return this.numbers.filter((number: number) => number % 2 === 0)
         }
     }
 </script>

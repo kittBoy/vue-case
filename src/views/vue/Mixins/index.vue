@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Kanban v-for="item in list"  class="kanban todo"  :options="options" :header-text="item.name">
+        <Kanban v-for="item in list" class="kanban todo" :options="options" :header-text="item.name">
             <template slot="left">
                 <CodeEditor :value="item.rawHtml" class="app-codeEditor"/>
             </template>
@@ -34,17 +34,17 @@
             return [
                 {
                     name: 'mixins基础',
-                    rawHtml: require( "!!html-loader!./components/Basics.vue"),
+                    rawHtml: require('!!html-loader!./components/Basics.vue'),
                     component: Basics
                 },
                 {
                     name: '选项合并',
-                    rawHtml: require( "!!html-loader!./components/OptionMerging.vue"),
+                    rawHtml: require('!!html-loader!./components/OptionMerging.vue'),
                     component: OptionMerging
                 },
                 {
                     name: '全局混入',
-                    rawHtml: require( "!!html-loader!./components/GlobalMixin.vue"),
+                    rawHtml: require('!!html-loader!./components/GlobalMixin.vue'),
                     component: GlobalMixin
                 }
             ]
